@@ -1,10 +1,10 @@
-package com.inventory;
+package com.sunbeam;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class InventoryApiApplicationTests {
+class DemoApplicationTests {
 
 	@Test
 	void contextLoads() {
