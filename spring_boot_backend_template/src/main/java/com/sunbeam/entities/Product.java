@@ -31,7 +31,7 @@ public class Product {
 	private String description;
 	@Column(nullable = false)
 	private Long stock_quantity;
-	private boolean isActive; 
+	private boolean isActive = true; 
 	@CreationTimestamp
 	private LocalDateTime createdTime;
 	@UpdateTimestamp
