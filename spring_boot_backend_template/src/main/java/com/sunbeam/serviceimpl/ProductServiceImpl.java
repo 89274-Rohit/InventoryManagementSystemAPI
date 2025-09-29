@@ -86,6 +86,9 @@ public class ProductServiceImpl implements ProductService{
 		if(quantity<=0) {
 			throw new InvalidStockOperationException("Please Enter value greater than zero");
 		}
+		if(product.get().getStock_quantity()==0) {
+			throw new InvalidStockOperationException("Product out of Stock");
+		}
 		if(quantity>product.get().getStock_quantity()) {
 			throw new InvalidStockOperationException("Entered quantity is not available in stock please try with lesser quantity");
 		}
@@ -93,5 +96,18 @@ public class ProductServiceImpl implements ProductService{
 		product.get().setStock_quantity(quan - quantity);
 		ProductDto productDto = modelMapper.map(product,ProductDto.class);
 		return productDto;		
+	}
+
+	@Override
+	public List<ProductDto> getAllProductBelowThreshold() {
+		List<Product> productList = productDao.findByisActiveTrue(); 
+		ArrayList<ProductDto> list = new ArrayList<>();
+		for(Product p : productList) {
+			if(p.getStock_quantity()<=p.getLow_stock_threshold()) {
+				ProductDto productDto = modelMapper.map(p, ProductDto.class);
+				list.add(productDto);
+			}
+		}
+		return list;
 	}
 }

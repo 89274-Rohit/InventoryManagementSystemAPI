@@ -13,5 +13,4 @@ public class ProductDto {
 	private String name;
 	private String description;
 	private Long stock_quantity;
-
 }

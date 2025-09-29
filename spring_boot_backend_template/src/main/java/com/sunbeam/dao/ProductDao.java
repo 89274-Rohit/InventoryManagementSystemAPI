@@ -16,5 +16,5 @@ public interface ProductDao extends JpaRepository<Product, Long>{
 	List<Product> findByisActiveTrue();
 	//@Query("select p from Product p where p.isActive=true and name=:pname")
 	Optional<Product> findByNameAndIsActiveTrue(String name);
-	
+	//List<Product> findAllByisActiveTrue();
 }

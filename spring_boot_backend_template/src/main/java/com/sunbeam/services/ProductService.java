@@ -12,4 +12,5 @@ public interface ProductService {
 	List<ProductDto> getAllActiveProducts();
 	ProductDto updateProductAdd(String name,Long quantity);
 	ProductDto updateProductRemove(String name,Long quantity);
+	List<ProductDto> getAllProductBelowThreshold();
 }

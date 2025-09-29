@@ -64,4 +64,9 @@ public class ProductController {
 		ProductDto productDto = productService.updateProductRemove(name, quantity);
 		return ResponseEntity.ok(productDto);
 	}
+	@GetMapping("/readlowstock")
+	public ResponseEntity<?> reaProductLowStockThreshold(){
+		List<ProductDto> productDto = productService.getAllProductBelowThreshold();
+		return ResponseEntity.ok(productDto);
+	}
 }

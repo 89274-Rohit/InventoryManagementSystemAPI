@@ -32,6 +32,7 @@ public class Product {
 	@Column(nullable = false)
 	private Long stock_quantity;
 	private boolean isActive = true; 
+	private Long low_stock_threshold = 10L;
 	@CreationTimestamp
 	private LocalDateTime createdTime;
 	@UpdateTimestamp
