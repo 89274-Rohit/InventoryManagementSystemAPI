@@ -2,4 +2,6 @@
 
 Inventory Management API is Spring Boot backend application.
 
-MYSQL- mysql -h database-1.c5ku444m69ik.ap-southeast-2.rds.amazonaws.com -P 3306 -u admin -p
+mysql -h mysql-75927c2-rohitbadke13-5861.l.aivencloud.com -P 13271 -u avnadmin -p
+
+AVNS_Pqv9e-fBkxLIznsXaJA
