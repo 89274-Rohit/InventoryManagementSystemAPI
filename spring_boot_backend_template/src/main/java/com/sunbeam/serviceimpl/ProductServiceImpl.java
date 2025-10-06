@@ -47,8 +47,11 @@ public class ProductServiceImpl implements ProductService{
 
 	@Override
 	public ApiResponse removeProductByName(String name) {
-		Product product = productDao.findByName(name);
-		product.setActive(false);
+		Optional<Product> product = productDao.findByName(name);
+		if(product.isEmpty()) {
+			throw new ProductNotFoundException("Product not found with name "+name);
+		}
+		product.get().setActive(false);
 		return new ApiResponse("Product SucessFully Deleted");
 	}
 

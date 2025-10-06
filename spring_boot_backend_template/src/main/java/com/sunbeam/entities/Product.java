@@ -30,8 +30,9 @@ public class Product {
 	private String name;
 	private String description;
 	@Column(nullable = false)
-	private Long stock_quantity;
+	private Long stock_quantity = 0L;
 	private boolean isActive = true; 
+	@Column(nullable = false)
 	private Long low_stock_threshold = 10L;
 	@CreationTimestamp
 	private LocalDateTime createdTime;

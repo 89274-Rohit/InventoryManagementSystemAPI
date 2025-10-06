@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import com.sunbeam.entities.Product;
 
 public interface ProductDao extends JpaRepository<Product, Long>{
-	Product findByName(String name);
+	Optional<Product> findByName(String name);
 	Boolean existsByName(String name);
 	void deleteByName(String name);
 	List<Product> findByisActiveTrue();
